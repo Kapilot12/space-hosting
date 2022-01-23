@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
 const cmdshandler = require("./handlers/handlercommand")
 const mongoC = require("discord-mongo-currency")
+const config = require("./config/config.json")
 
 
 //cmds
@@ -37,5 +38,4 @@ mongoC.connect('mongodb+srv://Hxd:Kapiloteq@cluster0.iyjwl.mongodb.net/myFirstDa
 
 
 })
-
-client.login("token")
+client.login(config.token)

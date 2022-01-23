@@ -10,6 +10,7 @@ cmdshandler(client)
 
 
 
+
  
 client.on("ready", () => {
 
@@ -37,4 +38,4 @@ mongoC.connect('mongodb+srv://Hxd:Kapiloteq@cluster0.iyjwl.mongodb.net/myFirstDa
 
 })
 
-client.login("OTA1OTEwNDc0NjQ0ODE1OTEz.YYQ84A.xk5cTqFbQi946JzUgFQpshCsF8Y")
+client.login("token")

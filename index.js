@@ -4,18 +4,20 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
 const cmdshandler = require("./handlers/handlercommand")
 const mongoC = require("discord-mongo-currency")
 const config = require("./config/config.json")
+const eventsH = require("./handlers/events.h")
 
 
 //cmds
 cmdshandler(client)
 
+//events
+eventsH(client)
 
 
 
  
 client.on("ready", () => {
 
-    console.log("Gotowy!")
 
     client.user.setPresence({
         activity: {
@@ -31,11 +33,12 @@ client.on("ready", () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => {
-        console.log("Connected to Database")
+        console.log('\x1b[31m', "Connected to Database")
     })
 
 mongoC.connect('mongodb+srv://Hxd:Kapiloteq@cluster0.iyjwl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
 
 })
+
 client.login(config.token)
